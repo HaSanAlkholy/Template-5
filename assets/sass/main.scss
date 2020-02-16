@@ -1,0 +1,326 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+$color1:dodgerblue;
+$color2:rgb(30, 101, 255);
+
+html,
+body {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+p {
+    color: gray;
+}
+
+header {
+    height: 750px;
+    width: 100vw;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.5)), url('../img/header.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    @media(max-width:576px){
+        height: 550px;
+    }
+
+    .head {
+
+        h1 {
+            font-size: 55px;
+            font-family: 'Roboto Slab', serif;
+            display: flex;
+            flex-direction: column;
+            margin: 30px;
+            text-transform: uppercase;
+            
+        @media(max-width:576px){
+            font-size:30px;
+        }
+
+        }
+
+        h1:before,
+        h1:after {
+            content: "";
+            flex: 1 1;
+            border-bottom: 3px solid gray;
+            margin: 10px 20px;
+        }
+
+    }
+}
+
+.navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    transition:all 1s;
+}
+.nav-active{
+    background-color: rgba(0, 0, 0, 0.72) !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    margin-right: 50px;
+
+}
+
+#about {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    
+
+    .about-img {
+        padding: 0;
+
+        img {
+            width: 100%;
+            height:100%;
+        }
+    }
+
+    .about-head {
+        margin: 50px;
+
+        @media(max-width:576px){
+            margin:20;
+        }
+
+        p {
+            max-width: 700px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h2 {
+            font-family: 'Courier Prime', monospace;
+            
+        }
+    }
+
+    .about-body {
+        margin: 50px;
+
+        @media(max-width:576px){
+            margin:0;
+        }
+
+        .service-body {
+            display: flex;
+            flex-wrap: wrap;
+
+            .service {
+                display: flex;
+                width: 45%;
+
+                @media(max-width:768px){
+                    width:90%;
+                    margin:20px;
+                }
+            }
+        }
+
+        p {
+            max-width: 700px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h4 {
+            font-family: 'Courier Prime', monospace;
+        }
+
+        span {
+            translate: all 0.5s;
+            color: $color1;
+            font-size: 50px;
+            margin: 20px;
+            &:hover{
+                color:$color2;
+            }
+        }
+    }
+
+
+
+}
+
+#gallery{
+    margin-top:100px;
+    margin-bottom:100px;
+    text-align: center;
+
+    h2 {
+        font-family: 'Courier Prime', monospace;
+        
+    }
+
+    .gallery-body{
+        column-count: 3;
+
+        @media(max-width:768px){
+            column-count: 2;
+        }
+        @media(max-width:576px){
+            column-count: 1;
+        }
+
+        img{
+            width:100%;
+            margin:20px;
+
+            @media(max-width:576px){
+                margin:auto;
+                margin-bottom:20px;
+            }
+        }
+    }
+
+    .img-overlay{
+        height:99vh;
+        width:100vw;
+        background-color:rgba(0, 0, 0, 0.7);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: none;
+
+        img{
+            width:50%;
+            max-height:80vh; 
+        }
+    }
+}
+
+#services{
+    margin-top:100px;
+    margin-bottom:100px;
+    h2 {
+        font-family: 'Courier Prime', monospace;
+        margin-bottom:20px;
+    }
+    .service{
+        padding:20px;
+        &:focus {
+            outline:none;
+        }
+    }
+    .btn a {
+        color: white;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .sect-body {
+        padding: 20px;
+
+        @media(max-width:992px) {
+            & {
+                padding: 0px;
+                padding-left: 20px;
+            }
+        }
+
+        @media(max-width:768px) {
+            & {
+                margin-top: 80px;
+            }
+        }
+
+        h2 {
+            padding-bottom: 30px;
+            padding-left: 10px;
+            border-bottom: 2px solid rgb(80, 78, 100);
+            max-width: 80%;
+            margin-bottom: 20px;
+
+            @media(max-width:992px) {
+                & {
+                    font-size: 30px;
+                    max-width: 100%;
+                }
+            }
+        }
+
+        p {
+            margin-top: 20px;
+
+            @media(max-width:992px) {
+                & {
+                    font-size: 12px;
+                    display: inline-block;
+                }
+            }
+
+            @media(max-width:576px) {
+                & {
+                    margin-top: 10px;
+                    font-size: 14px;
+                    display: inline-block;
+                }
+            }
+
+        }
+
+        .btn {
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+    }
+
+    img {
+        box-shadow: 10px 10px 10px 10px gray;
+        border-radius: 20px;
+        max-width: 100%;
+        min-height: 300px;
+        transition: all 0.5s;
+
+        &:hover {
+            transform: scale(1.03);
+        }
+    }
+}
+
+footer {
+    padding-top: 100px;
+    padding-bottom: 10px;
+
+    h2 {
+        font-family: 'Courier Prime', monospace;
+        margin: 20px
+    }
+
+    .social {
+        margin-bottom: 20px;
+        margin-top: 50px;
+
+        span a {
+            margin: 15px;
+            color: white;
+            font-size: 25px;
+
+            &:hover {
+                color: $color2;
+            }
+        }
+    }
+}
